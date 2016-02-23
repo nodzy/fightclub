@@ -7,15 +7,6 @@ class FightsControllerTest < ActionController::TestCase
 	@user2 = users(:obiwan)
   end
   
-  test "should get index" do
-    get :index
-    assert_response :success 
-  end
-
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
 
   test "should create fight" do
     assert_difference('Fight.count') do
