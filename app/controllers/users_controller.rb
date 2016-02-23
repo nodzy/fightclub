@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.paginate(page: params[:page]).order(exp: :desc)
+    @users = User.paginate(page: params[:page]).order(exp: :desc, level: :desc)
     @fight = Fight.new
     @fight.user1 = User.new
     @fight.user2 = User.new
