@@ -1,0 +1,32 @@
+
+
+
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+
+  <div class="container">
+  <ul class="nav navbar-nav navbar-left">
+    <li><%= link_to "FIGHTCLUB", root_path, id: "logo" %></li>
+	</ul>
+
+	
+	
+	<% if params[:action] == "index" %>
+
+
+	  <ul class="nav navbar-nav navbar-right">
+   
+  
+ <li> <%= link_to "New fighter", new_user_path, remote: true %></li></ul>
+
+</ul>
+
+   <%end%>
+   
+     
+  </div>
+
+</header>
+
+
+   

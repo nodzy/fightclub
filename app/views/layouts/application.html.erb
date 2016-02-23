@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Fightclub</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header class = "navbar navbar-fixed-top navbar-inverse">
+
+
+<div class = "container">
+
+
+
+
+<% flash.each do |key, value| %>
+  <p id='<%= key %>'><%= value %></p>
+<% end %>
+</header>
+
+
+
+<%= yield %>
+
+<%= render 'layouts/header' %>
+
+</div>
+</body>
+</html>
+
+
+
+
+
+

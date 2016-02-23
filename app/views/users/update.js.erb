@@ -1,0 +1,11 @@
+$('.modal-body').html('<%= j render partial: 'ehh' %>');
+
+$('#users').append('<%= j render (@user) %>')
+
+setTimeout(function(){
+  $('#dialog').modal('hide')
+}, 800);
+
+  $('#dialog').on('hidden.bs.modal', function () {
+ location.reload();
+})

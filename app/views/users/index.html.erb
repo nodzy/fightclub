@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+
+
+ <div class="container">
+
+<%= will_paginate %>
+<%= render 'form2' %>
+
+
+<br>
+
+<div class="listing">
+
+
+
+
+
+<table class = "table">
+
+  <thead>
+    <tr>
+	
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Description</th>
+      <th>Midichlorians</th>
+      <th>Level</th>
+      <th>Lightsaber</th>
+      <th>Force</th>
+	  <th>Exp</th>
+	  <th>Avatar<ar/th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+<tbody id="users">
+    
+
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.description %></td>
+        <td><%= user.midichlorians %></td>
+        <td><%= user.level %></td>
+        <td><%= user.lightsaber %></td>
+        <td><%= user.force %></td>
+		<td><%= user.exp %></td>
+		<td><%= image_tag user.picture.thumb.url %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user), remote: true %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+
+  <%= render 'dialog' %>
+
+  </div>
+

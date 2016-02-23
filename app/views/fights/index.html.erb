@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Fights</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User1</th>
+      <th>User2</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+        <tr>
+    <% @fights.each do |fight| %>
+
+	  <% fight.users.each do |user| %>
+	  
+        <td><%= fight.users.first.first_name%></td>
+        <td><%= fight.users.first.last_name%></td>
+		 <td><%= fight.users.last.first_name%></td>
+		<td><%= fight.users.last.last_name%></td>
+        <td><%= link_to 'Show', fight %></td>
+        <td><%= link_to 'Edit', edit_fight_path(fight) %></td>
+        <td><%= link_to 'Destroy', fight, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+	  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fight', new_fight_path %>

@@ -1,0 +1,52 @@
+<div class="container">
+<div class="form_user">
+<%= form_for(@user, remote: true, html: { multipart: true } ) do |f| %>
+
+<%= render 'shared/errors' %>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  
+  
+  
+
+  
+  
+  
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <% if (params[:action] == "new" || params[:action] == "create") %>
+  <div class="field">
+    <%= f.label :midichlorians %><br>
+   <%= f.select :midichlorians, [ 1, 2, 3, 4, 5 ], :prompt => 'Select One' %>
+  </div>
+  <div class="field">
+    <%= f.label :level %><br>
+   <%= f.select :level, [ 1, 2, 3, 4, 5], :prompt => 'Select One' %>
+  </div>
+  <div class="field">
+    <%= f.label :lightsaber %><br>
+    <%= f.select :lightsaber, [ 1, 2, 3, 4, 5 ], :prompt => 'Select One' %>
+  </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :force %><br>
+    <%= f.select :force, [ 'Light', 'Dark' ], :prompt => 'Select One' %>
+
+  </div>
+ 
+ <br>
+ <br>
+  <%= f.submit :class => "btn btn-primary btn-lg" %>
+  
+<% end %>
+</div>
+</div>

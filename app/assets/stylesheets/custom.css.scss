@@ -1,0 +1,299 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+
+/* universal */
+
+body {
+  padding-top: 30px;
+
+}
+
+
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+line-height: 1.5;
+}
+
+h1 {
+
+font-size: 2em;
+letter-spacing: -2px;
+margin-bottom: 30px;
+text-align: center;
+}
+
+
+h2 {
+  font-size: 2.2em;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+.draw
+{
+ 
+  font-size: 3.2em;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: green;
+}
+
+.number
+{
+  font-size: 1.8em;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  font-weight: normal;
+
+  color: green;
+
+
+}
+
+.form_color
+{
+  font-size: 2.2em;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  font-weight: normal;
+
+
+
+}
+
+.jumbotron{
+background-color: #CCFFCC!important;
+
+}
+
+.field
+{
+color: #006633;
+
+
+}
+
+
+
+#error_explanation {
+color: red;
+ul {
+color: red;
+margin: 0 0 30px 0;
+}
+}
+.field_with_errors {
+@extend .has-error;
+.form-control {
+color: $state-danger-text;
+}
+}
+
+
+.actions
+{
+  position: absolute;
+    
+    top: 200px;
+left: 50%;
+    transform: translate(-50%, 0);
+
+   
+}
+
+
+.fields
+{
+  position: absolute;
+    
+    top: 160px;
+	 font-style: italic;
+ font-family: serif;
+  letter-spacing: 1px;
+  font-size:20px;
+ left: 50%;
+    transform: translate(-50%, 0);
+
+
+
+}
+
+
+
+
+.field2
+{
+  position: absolute;
+    right: 590px;
+    top: 170px;
+	 font-style: italic;
+ font-family: serif;
+  letter-spacing: 1px;
+  font-size:20px;
+  width:100px;
+
+}
+
+
+.button-s
+{
+
+ position: absolute;
+    left: 100px;
+    top: 90px;
+}
+
+
+.listing{
+
+
+  position: absolute;
+     left: 100px;
+    top: 300px;
+
+right: 100px;
+
+
+}
+
+.end
+{
+  position: absolute;
+    
+  top:80px;
+
+left: 100px;
+right: 100px;
+
+}
+
+.showing
+{
+  position: absolute;
+     left: 100px;
+    top: 210px;
+
+right: 100px;
+ color: brown;
+ font-weight:bold;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.9em;
+  color: white;
+ 
+  letter-spacing: 1px;
+  padding-top: 15px;
+  font-weight: bold;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+
+
+.btn-circle {
+  width: 250px;
+  height: 70px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 18px;
+  color: white;
+  line-height: 1.42;
+  border-radius: 24px;
+  background-color: #8090C2;
+  
+  color: white;
+font-weight:bold;
+  letter-spacing: 2px;
+}
+
+
+.nav.navbar-nav.navbar-right li a {
+
+   
+
+     float: left;
+  margin-right: 10px;
+  font-size: 1.9em;
+  color: #F0F8FF;
+ font-style: italic;
+ font-family: serif;
+  letter-spacing: 1px;
+  padding-top: 15px;
+  font-weight:bold;
+
+
+}
+
+
+
+
+
+
+
+.table{
+
+font-size: 1.1em;
+letter-spacing: 1.5px;
+
+ background-color: 	#F5DEB3;
+}
+
+.form_user
+{
+
+color: black!important;
+ font-size: 1.1em;
+  letter-spacing: 0.1px!important;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: black!important;
+
+}
+
+.window {
+
+  font-size: 1.5em;
+  letter-spacing: 1.2px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: green;
+
+}
+
+
+.modal {
+ overflow-y: auto;
+}
+
+.modal-open {
+ overflow: auto;
+}
+
+.modal-backdrop {
+   background-color: #F5DEB3;
+}

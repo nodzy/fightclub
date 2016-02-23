@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+anakin:
+  first_name: Anakin
+  last_name: Skywalker
+  description: MyText
+  midichlorians: 5
+  level: 5
+  lightsaber: 5
+  force: Dark
+  exp: 0
+
+obiwan:
+  first_name: Obi-Wan
+  last_name: Kenobi
+  description: MyText
+  midichlorians: 4
+  level: 3
+  lightsaber: 4
+  force: Light
+  exp: 2
+  
+  
+random:
+  first_name: Random
+  last_name: Random
+  description: MyText
+  midichlorians: 1
+  level: 4
+  lightsaber: 2
+  force: Light

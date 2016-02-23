@@ -1,0 +1,100 @@
+<div class="container">
+<tbody>
+
+
+<div class="showing">
+
+ <table class="table">
+    <thead>
+    
+    </thead>
+    <tbody>
+      <tr>
+        <td>First Name</td>
+        <td><%= @user.first_name %></td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td><%= @user.last_name %></td>
+      </tr>
+	  <tr>
+        <td>Avatar</td>
+        <td><%= image_tag @user.picture.thumb.url %></td>
+      </tr>
+	     <tr>
+        <td>Description</td>
+        <td><%= @user.description %></td>
+      </tr>
+      <tr>
+	  
+        <td>Level</td>
+		
+        <td><%= display_level %><div class="progress">
+		 
+		<%if @user.force=="Light"%>
+  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<%= (@user.level*20) %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= (@user.level*20) %>%">
+
+  </div>
+
+<%else%>
+<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%= (@user.level*20) %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= (@user.level*20) %>%">
+
+  </div>
+</div>
+<%end%>
+</td>
+      </tr>
+	   <tr>
+        <td>Midichlorians</td>
+                <td><div class="progress">
+		<%if @user.force=="Light"%>
+  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<%= (@user.midichlorians*20) %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= (@user.midichlorians*20) %>%">
+
+  </div>
+
+<%else%>
+<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%= (@user.midichlorians*20) %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= (@user.midichlorians*20) %>%">
+
+  </div>
+</div>
+<%end%></td>
+      </tr>
+	   <tr>
+        <td>Force</td>
+        <td><%= @user.force %></td>
+      </tr>
+<tr>
+        <td>Lightsaber</td>
+               <td><div class="progress">
+		<%if @user.force=="Light"%>
+  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="<%= (@user.lightsaber*20) %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= (@user.lightsaber*20) %>%">
+
+  </div>
+
+<%else%>
+<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<%= (@user.lightsaber*20) %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= (@user.lightsaber*20) %>%">
+
+  </div>
+</div>
+<%end%> 
+	  
+	  </td></tr>
+	     <tr>
+        <td>Number of fights</td>
+        <td><%= @user.fights.count %></td>
+      </tr>
+	     <tr>
+        <td>Number of fights won</td>
+        <td><%= @user.fights.where(winner: @user.id).count %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="end">
+
+<%=render 'formimg' %>
+</div>
+</div>
+</div>

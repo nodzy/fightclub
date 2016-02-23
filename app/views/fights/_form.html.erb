@@ -1,0 +1,25 @@
+<%= form_for(@fight) do |f| %>
+  <% if @fight.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fight.errors.count, "error") %> prohibited this fight from being saved:</h2>
+
+      <ul>
+      <% @fight.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user1 %><br>
+    <%= f.text_field :user1 %>
+  </div>
+  <div class="field">
+    <%= f.label :user2 %><br>
+    <%= f.text_field :user2 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

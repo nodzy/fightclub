@@ -1,0 +1,21 @@
+<div class="container">
+
+
+     
+	 
+	 <% if @fight.winner.nil? %>
+<div class="draw">
+
+DRAW!
+<%else%>
+</div>
+<div class="window">
+	 The winner is: <%= User.find(@fight.winner).first_name %><%="  #{User.find(@fight.winner).last_name}"%>!
+	 <br>
+	 <br>
+	 <br>
+      <%= link_to 'VISIT PROFILE',user_path(User.find(@fight.winner)) %>
+ 
+<%end%>
+</div>
+</div>
