@@ -47,10 +47,10 @@ end
   def update
     respond_to do |format|
       if params[:user] && @user.update(user_params)
-        format.html { redirect_to @user, notice: "User successfully updated" }
+        format.html { redirect_to @user }
         format.js 
       else
-        format.html {redirect_to @user, alert: "Error!" }
+        format.html {redirect_to @user, alert: "Select file to be uploaded" }
         format.js {render :edit}
       end
     end 

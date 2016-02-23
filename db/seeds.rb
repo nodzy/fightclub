@@ -59,8 +59,8 @@ User.create!(first_name:  "Anakin",
              midichlorians:              5,
              level: 2,
              lightsaber: 5,
-             force: 'Light',
-			 picture: File.open(Rails.root + "./db/anakin.jpg"))
+             force: 'Light')
+			 
 
 
 

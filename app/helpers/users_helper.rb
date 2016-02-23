@@ -3,7 +3,7 @@ module UsersHelper
 def display_level
 
 if @user.level==1
-"Aprentice"
+"Apprentice"
 elsif @user.level==2
 "Padawan"
 elsif @user.level==3
