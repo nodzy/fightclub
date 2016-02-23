@@ -3,15 +3,13 @@ require 'test_helper'
 class FightsControllerTest < ActionController::TestCase
 
   setup do
-    
 	@user1 = users(:anakin)
 	@user2 = users(:obiwan)
   end
   
   test "should get index" do
     get :index
-    assert_response :success
-    
+    assert_response :success 
   end
 
   test "should get new" do
@@ -24,13 +22,7 @@ class FightsControllerTest < ActionController::TestCase
       post :create, fight: {user1: @user1.id, user2: @user2.id  }, format: :js
 	
     end
-
-    
   end
-
-
-
-
 
 
 

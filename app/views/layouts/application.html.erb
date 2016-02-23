@@ -9,19 +9,14 @@
 </head>
 <body>
 
+<div class = "container">
 <header class = "navbar navbar-fixed-top navbar-inverse">
 
 
-<div class = "container">
-
-
-
-
+</header>
 <% flash.each do |key, value| %>
   <p id='<%= key %>'><%= value %></p>
 <% end %>
-</header>
-
 
 
 <%= yield %>

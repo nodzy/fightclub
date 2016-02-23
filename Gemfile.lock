@@ -66,6 +66,11 @@ GEM
     erubis (2.7.0)
     excon (0.45.4)
     execjs (2.6.0)
+    faker (1.6.2)
+      i18n (~> 0.5)
+    file_validators (2.0.2)
+      activemodel (>= 3.0)
+      mime-types (>= 1.0)
     fog (1.23.0)
       fog-brightbox
       fog-core (~> 1.23)
@@ -198,6 +203,8 @@ DEPENDENCIES
   byebug
   carrierwave (= 0.10.0)
   coffee-rails (~> 4.1.0)
+  faker
+  file_validators
   fog (= 1.23.0)
   jbuilder (~> 2.0)
   jquery-rails

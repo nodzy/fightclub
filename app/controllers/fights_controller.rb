@@ -11,13 +11,13 @@ class FightsController < ApplicationController
   # GET /fights/1.json
   def show
 
-	end
+  end
   # GET /fights/new
   def new
- 
-	 @fight = Fight.new
-	
-  end
+   
+   @fight = Fight.new
+   
+ end
 
   # GET /fights/1/edit
   def edit
@@ -26,47 +26,33 @@ class FightsController < ApplicationController
   # POST /fights
   # POST /fights.json
   def create
-  if (params[:fight][:user1]) != (params[:fight][:user2])
-    user1 = User.find(params[:fight][:user1])
-    user2 = User.find(params[:fight][:user2])
-	
-	
-	@fight = Fight.new
-	
-	
-	@fight.users << user1
-	@fight.users << user2
+    if (params[:fight][:user1]) != (params[:fight][:user2])
+      user1 = User.find(params[:fight][:user1])
+      user2 = User.find(params[:fight][:user2])
+      @fight = Fight.new
+      @fight.users << user1
+      @fight.users << user2
 
-     if (user1.level + (user1.exp/2)) == (user2.level + (user2.exp/2))
-	 @fight.winner = nil
-	 end
-	
-	if (user1.level + (user1.exp/2)) > (user2.level + (user2.exp/2))
-	  
-	  
-	 
-	 @fight.winner=user1.id
-	 end
-	 if (user1.level + (user1.exp/2)) < (user2.level + (user2.exp/2))
-
-	@fight.winner=user2.id
+		if (user1.level + (user1.exp/2)) == (user2.level + (user2.exp/2))
+       @fight.winner = nil
+		end
+		if (user1.level + (user1.exp/2)) > (user2.level + (user2.exp/2)) 
+       @fight.winner=user1.id
+		end
+		if (user1.level + (user1.exp/2)) < (user2.level + (user2.exp/2))
+      @fight.winner=user2.id 
+		end
     
-	 end
-	
-	
 
-    respond_to do |format|
-     
-       if @fight.save
-		format.js 
-    
-      
-    end
+		respond_to do |format|
+		if @fight.save
+      format.js 
+		end
 	end
 	else
-	 redirect_to root_url 
-  end
-end
+	redirect_to root_url 
+	end
+	end
 
   # PATCH/PUT /fights/1
   # PATCH/PUT /fights/1.json
@@ -97,10 +83,10 @@ end
     def set_fight
       @fight = Fight.find(params[:id])
     end
-	
+    
 
     # Never trust parameters from the scary internet, only allow the white list through.
     # def fight_params
       # params.require(:fight).permit(:user1, :user2)
     # end
-end
+  end

@@ -5,28 +5,23 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.paginate(page: params[:page]).order(exp: :desc)
-	
-	@fight = Fight.new
+    @fight = Fight.new
     @fight.user1 = User.new
-	@fight.user2 = User.new
-	
-
+    @fight.user2 = User.new
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
- respond_to do |format|
-     
-		format.js
-		format.html
+   respond_to do |format|
+    format.js
+    format.html
   end
-  end
+end
 
   # GET /users/new
   def new
     @user = User.new
-
   end
 
   # GET /users/1/edit
@@ -37,11 +32,9 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
       if @user.save
-        
-		format.js
+        format.js
       else
         format.js { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -53,15 +46,14 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
-		format.js
+      if params[:user] && @user.update(user_params)
+        format.html { redirect_to @user, notice: "User successfully updated" }
+        format.js 
       else
-        format.js { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.html {redirect_to @user, alert: "Error!" }
+        format.js {render :edit}
       end
-    end
+    end 
   end
 
   # DELETE /users/1
@@ -82,6 +74,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :description, :midichlorians, :level, :lightsaber, :force, :exp, :picture)
+      params.require(:user).permit(:first_name, :last_name, :description, :midichlorians, :level, :lightsaber, :force, :exp, :remove_picture, :picture)
     end
-end
+  end

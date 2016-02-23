@@ -1,26 +1,22 @@
 <%= form_for(@user, html: { multipart: true } ) do |f| %>
-
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
- 
+ <%= render 'shared/errors' %>
    <div class="field">
-  
 <%= f.file_field :picture %>
 </div>
+    <p>
+    <label>
+       <% if @user.picture? %><%= f.check_box :remove_picture %>
+      Remove avatar
+	  <% end %>
+    </label>
+  </p>
   
-    <%= f.submit 'Add avatar', :class => "btn btn-default btn-circle" %>
- 
+    <% if @user.picture? %> <%= f.submit 'Remove/change avatar', :class => "btn btn-default btn-circle" %>
+	 <% else %> <%= f.submit 'Add avatar', :class => "btn btn-default btn-circle" %>
+ <% end %>
 <% end %>
+
+
 
 
 

@@ -1,17 +1,22 @@
 <div class="container">
 <tbody>
-
-
+<div class="errors_avatar">
+    		<% flash.each do |key, value| %>
+  <p id='<%= key %>'><%= value %></p>
+<% end %>
+</div>
 <div class="showing">
 
  <table class="table">
     <thead>
-    
+
     </thead>
     <tbody>
       <tr>
+
         <td>First Name</td>
         <td><%= @user.first_name %></td>
+
       </tr>
       <tr>
         <td>Last Name</td>

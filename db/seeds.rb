@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
 
 
 
@@ -29,14 +21,16 @@ User.create!(first_name:  "Mace",
              midichlorians:              2,
              level: 4,
              lightsaber: 5,
-             force: 'Light')
+             force: 'Light',
+			 picture: File.open(Rails.root + "./db/macewindu.jpg"))
 
 User.create!(first_name:  "Obi-Wan",
              last_name: "Kenobi",
              midichlorians:              4,
              level: 4,
              lightsaber: 5,
-             force: 'Light')	
+             force: 'Light',
+			 picture: File.open(Rails.root + "./db/obiwan.jpg"))	
 
 User.create!(first_name:  "Darth",
              last_name: "Sidious",
@@ -57,14 +51,16 @@ User.create!(first_name:  "Qui-Gon",
              midichlorians:              3,
              level: 4,
              lightsaber: 5,
-             force: 'Light')
+             force: 'Light',
+			 picture: File.open(Rails.root + "./db/quigon.jpg"))
 
 User.create!(first_name:  "Anakin",
              last_name: "Skywalker",
              midichlorians:              5,
              level: 2,
              lightsaber: 5,
-             force: 'Light')
+             force: 'Light',
+			 picture: File.open(Rails.root + "./db/anakin.jpg"))
 
 
 
@@ -76,13 +72,39 @@ User.create!(first_name:  "Darth",
              force: 'Dark')			 			 
 			
 			
-			
-99.times do |n|
 
-User.create!(first_name:  "Example User",
-             last_name: "example",
+			
+			
+5.times do
+2.times do
+ first_name  = Faker::Name.first_name
+ last_name  = Faker::Name.last_name
+User.create!(first_name: first_name,
+             last_name: last_name,
              midichlorians:              2,
              level: 3,
              lightsaber: 4,
              force: 'Light')
 end
+2.times do
+ first_name  = Faker::Name.first_name
+ last_name  = Faker::Name.last_name
+User.create!(first_name: first_name,
+             last_name: last_name,
+             midichlorians:              1,
+             level: 2,
+             lightsaber: 3,
+             force: 'Dark')
+
+end
+2.times do
+first_name  = Faker::Name.first_name
+ last_name  = Faker::Name.last_name
+User.create!(first_name: first_name,
+             last_name: last_name,
+             midichlorians:              2,
+             level: 1,
+             lightsaber: 4,
+             force: 'Light')
+end
+end			

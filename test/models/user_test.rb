@@ -7,8 +7,6 @@ class UserTest < ActiveSupport::TestCase
 
 
 
-
-
  def setup
     @user = User.new(first_name: "Example", last_name: "User",
                      midichlorians: 2, level: 2, lightsaber: 2, force: "Dark")
@@ -49,17 +47,17 @@ test "last name should be present" do
   end
 
   test "first name should not be too long" do
-    @user.first_name = "a" * 51
+    @user.first_name = "a" * 21
     assert_not @user.valid?
   end
   
   test "last name should not be too long" do
-    @user.last_name = "a" * 51
+    @user.last_name = "a" * 21
     assert_not @user.valid?
   end
 
    test "description should not be too long" do
-    @user.description = "a" * 141
+    @user.description = "a" * 51
     assert_not @user.valid?
   end
   
